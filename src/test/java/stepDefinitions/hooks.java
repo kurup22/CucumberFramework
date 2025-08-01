@@ -1,6 +1,8 @@
 package stepDefinitions;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import utils.Injection;
 
 import java.io.IOException;
@@ -18,6 +20,12 @@ public class hooks {
     public void tearDown() throws IOException {
         if (injection.testBase.getDriver() != null) {
             injection.testBase.getDriver().quit();
+        }
+    }
+
+    @AfterStep
+    public void takeScreenshot(Scenario scenario) {
+        if (scenario.isFailed()) {
         }
     }
 
