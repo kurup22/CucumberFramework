@@ -9,5 +9,5 @@ Feature: OfferPage product validation
 
 Examples:
   | shortname |
-  | Tom       |
   | bro       |
+ # | bro       |

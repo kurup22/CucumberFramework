@@ -3,6 +3,8 @@ package stepDefinitions;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import utils.Injection;
 
 import java.io.IOException;
@@ -24,8 +26,11 @@ public class hooks {
     }
 
     @AfterStep
-    public void takeScreenshot(Scenario scenario) {
+    public void takeScreenshot(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {
+            TakesScreenshot ts=(TakesScreenshot)injection.testBase.getDriver();
+            byte[] ss=ts.getScreenshotAs(OutputType.BYTES);
+            scenario.attach(ss,"image/jpeg","image");
         }
     }
 
