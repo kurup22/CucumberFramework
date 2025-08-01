@@ -8,7 +8,7 @@ public class CheckoutPage {
     public WebDriver driver;
     private By checkoutProductName = By.cssSelector(".product-name");
     private By checkoutProductQuantity = By.cssSelector(".quantity");
-    private By promoButton = By.id("promoBtn");
+    private By promoButton = By.className("promoBtn");
     private By placeOrderButton = By.xpath("//button[contains(text(),'Place Order')]");     // Assuming there's a promo button with this ID
 
 
@@ -17,7 +17,7 @@ public class CheckoutPage {
         this.driver = driver;
     }
 
-    public String getCheckoutProduct() {
+    public String getCheckoutProductName() {
         return driver.findElement(checkoutProductName).getText().split("-")[0].trim();
     }
     public String getCheckoutProductQuantity() {

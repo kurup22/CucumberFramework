@@ -1,6 +1,6 @@
 Feature: Add to Cart and Checkout Validations
 
-
+@smoke
   Scenario Outline: Add item to cart and proceed to checkout
     Given User is on Greenkart Home Page
     When User searched product <product> in Search Bar and add quantity <quantity>
@@ -8,4 +8,4 @@ Feature: Add to Cart and Checkout Validations
     And User verifies the <product> is checkout page with quantity <quantity>
 Examples:
   | product | quantity |
-  | tomato  | 3        |
+  | Tomato  | 3        |

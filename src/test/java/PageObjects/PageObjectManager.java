@@ -31,5 +31,8 @@ public class PageObjectManager {
         return offerPage;
     }
 
+    public CheckoutPage getCheckoutPage() {
+        return new CheckoutPage(driver);
+    }
 
 }

@@ -57,6 +57,6 @@ public class LandingPageStepDefinitions {
 
     @Then("User adds the product to the cart")
     public void userAddsTheProductToTheCart() {
-
+      landingPage.addToCart();
     }
 }
