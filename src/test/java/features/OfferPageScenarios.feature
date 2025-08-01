@@ -9,5 +9,8 @@ Feature: OfferPage product validation
 
 Examples:
   | shortname |
+  | tom       |
   | bro       |
- # | bro       |
+  | straw     |
+    | cauli     |
+

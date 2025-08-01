@@ -3,6 +3,7 @@ package stepDefinitions;
 import PageObjects.LandingPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -47,4 +48,15 @@ public class LandingPageStepDefinitions {
     }
 
 
+    @When("User searched product {} in Search Bar and add quantity {}")
+    public void userSearchedProductInSearchBarAndAddQuantity(String product, String quantity) throws InterruptedException {
+
+        landingPage.searchProduct(product);
+        landingPage.incrementQuantity(quantity);
+    }
+
+    @Then("User adds the product to the cart")
+    public void userAddsTheProductToTheCart() {
+
+    }
 }
